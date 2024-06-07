@@ -1,15 +1,12 @@
 <?php
 require_once 'Film.php';
 require_once 'Role.php';
-require_once 'Personne.php';
+require_once 'Realisateur.php';
 require_once 'Genre.php';
-require_once 'Acteur.php';
+require_once 'Personne.php';
 
 
-
-
-
-class Realisateur extends Personne{
+class Acteur extends Personne{
 
     private array $filmographie=[];
 
@@ -33,4 +30,5 @@ class Realisateur extends Personne{
         }
     }
 }
+
 ?>
