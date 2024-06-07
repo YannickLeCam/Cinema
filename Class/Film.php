@@ -183,5 +183,10 @@ class Film {
         }
         
     }
+
+    public function __toString()
+    {
+        return "$this->titre";
+    }
 }
 ?>

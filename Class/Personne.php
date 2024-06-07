@@ -11,13 +11,13 @@ require_once 'Casting.php';
 <?php
 class Personne {
 
-    private string $nom;
+    protected string $nom;
 
-    private string $prenom;
+    protected string $prenom;
 
-    private DateTime $naissance;
+    protected DateTime $naissance;
 
-    private string $sexe;
+    protected string $sexe;
 
     public function __construct(string $nom,string $prenom,string $naissance,string $sexe) {
         $this->nom = $nom;
@@ -121,8 +121,8 @@ class Personne {
 
         return $this;
     }
+    
 }
-
 
 
 ?>

@@ -30,6 +30,11 @@ class Acteur extends Personne{
             $this->castings[]=$casting;
         }
     }
+
+    public function __toString()
+    {
+        return strtoupper($this->nom)." $this->prenom";
+    }
 }
 
 ?>

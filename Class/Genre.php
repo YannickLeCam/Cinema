@@ -55,5 +55,19 @@ class Genre {
     {
         return $this->films;
     }
+
+    public function htmlListFilm():string{
+        $retour = "<p> La liste de $this->nom : </p> <ul>";
+        foreach ($this->films as $film) {
+            $retour.="<li>$film</li>";
+        }
+        $retour .= "</ul>";
+        return $retour;
+    }
+
+    public function __toString()
+    {
+        return "$this->nom";
+    }
 }
 ?>

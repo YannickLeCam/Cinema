@@ -33,5 +33,9 @@ class Realisateur extends Personne{
             $this->filmographie[]=$film;
         }
     }
+    public function __toString()
+    {
+        return strtoupper($this->nom)." $this->prenom";
+    }
 }
 ?>
