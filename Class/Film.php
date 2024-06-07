@@ -179,7 +179,7 @@ class Film {
 
     public function addCasting(Casting $casting){
         if (!in_array($casting,$this->castings)) {
-            $this->castings=$casting;
+            $this->castings[]=$casting;
         }
         
     }

@@ -9,25 +9,25 @@ require_once 'Casting.php';
 
 class Acteur extends Personne{
 
-    private array $filmographie=[];
+    private array $castings=[];
 
     public function __construct(string $nom,string $prenom,string $naissance,string $sexe) {
         parent::__construct($nom,$prenom,$naissance,$sexe);
     }
 
     /**
-     * Get the value of filmographie
+     * Get the value of castings
      *
      * @return array[Film]
      */
-    public function getFilmographie(): array
+    public function getCastings(): array
     {
-        return $this->filmographie;
+        return $this->castings;
     }
 
-    public function addFilm(Film $film):void{
-        if (!in_array($film,$this->filmographie)) {
-            $this->filmographie[]=$film;
+    public function addCasting(Casting $casting):void{
+        if (!in_array($casting,$this->castings)) {
+            $this->castings[]=$casting;
         }
     }
 }

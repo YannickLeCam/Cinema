@@ -13,7 +13,7 @@ class Role {
 
     private string $nom;
 
-    private array $listeActeur = [];
+    private array $listeCasting = [];
 
     public function __construct(string $nom) {
         $this->nom = $nom;
@@ -48,9 +48,9 @@ class Role {
 
 
     //Servira de Setter a listActeur
-    public function addActeur(Acteur $acteur):void{
-        if (!in_array($acteur,$this->listeActeur)) { //On vérifie si l'acteur est deja dans la liste ou pas 
-            $this->listeActeur[]=$acteur;
+    public function addCasting(Casting $casting):void{
+        if (!in_array($casting,$this->listeCasting)) { //On vérifie si l'acteur est deja dans la liste ou pas 
+            $this->listeCasting[]=$casting;
         }
     }
     
@@ -58,11 +58,11 @@ class Role {
     /**
      * Get the value of listeActeur
      *
-     * @return array[Acteur]
+     * @return array[Casting]
      */
     public function getListeActeur(): array
     {
-        return $this->listeActeur;
+        return $this->listeCasting;
     }
 }
 ?>
