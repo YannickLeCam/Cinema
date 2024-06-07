@@ -4,6 +4,7 @@ require_once 'Role.php';
 require_once 'Personne.php';
 require_once 'Film.php';
 require_once 'Acteur.php';
+require_once 'Casting.php';
 
 class Genre {
     

@@ -4,6 +4,7 @@ require_once 'Role.php';
 require_once 'Realisateur.php';
 require_once 'Genre.php';
 require_once 'Personne.php';
+require_once 'Casting.php';
 
 
 class Acteur extends Personne{

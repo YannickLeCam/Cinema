@@ -4,6 +4,7 @@ require_once 'Role.php';
 require_once 'Personne.php';
 require_once 'Genre.php';
 require_once 'Acteur.php';
+require_once 'Casting.php';
 
 
 
@@ -17,14 +18,14 @@ class Film {
 
     private string $synopsis;
 
-    private array $casting=[];
+    private array $castings=[];
 
     private Realisateur $realisateur;
 
     private Genre $genre; //Dans l'exercice un film = un genre !
 
 
-    public function __construct(string $titre,string $dateSortie,int $duree,string $synopsis,Realisateur $realisateur,Genre $genre) {
+    public function __construct(string $titre,string $dateSortie,int $duree,Realisateur $realisateur,Genre $genre,array $castings=[],string $synopsis="") {
         $this->titre = $titre;
         $this->dateSortie = new DateTime($dateSortie);
         $this->duree = $duree;
@@ -33,6 +34,9 @@ class Film {
         $this->genre = $genre;
         $this->realisateur->addFilm($this);
         $this->genre->addFilm($this);
+        foreach ($castings as $casting) {
+            $this->addCasting($casting);
+        }
     }
 
     /**
@@ -171,6 +175,13 @@ class Film {
         $this->titre = $titre;
 
         return $this;
+    }
+
+    public function addCasting(Casting $casting){
+        if (!in_array($casting,$this->castings)) {
+            $this->castings=$casting;
+        }
+        
     }
 }
 ?>
