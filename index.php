@@ -57,11 +57,7 @@ require_once 'Class/Personne.php';
         $casting5 = new Casting($role5,$acteur5, $film2);
         $casting6 = new Casting($role6, $acteur6, $film2);
 
-        var_dump($film1);
-        echo "========================================================= <br>";
-        var_dump($casting1);
-        echo "========================================================= <br>";
-        echo $acteur1;
+        echo $film1->printFilm();
 
     ?>
 </body>

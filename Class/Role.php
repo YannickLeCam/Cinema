@@ -64,5 +64,10 @@ class Role {
     {
         return $this->listeCasting;
     }
+
+    public function __toString()
+    {
+        return "$this->nom";
+    }
 }
 ?>

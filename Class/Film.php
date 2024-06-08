@@ -32,6 +32,7 @@ class Film {
         $this->synopsis = $synopsis;
         $this->realisateur = $realisateur;
         $this->genre = $genre;
+
         $this->realisateur->addFilm($this);
         $this->genre->addFilm($this);
         foreach ($castings as $casting) {
@@ -182,6 +183,26 @@ class Film {
             $this->castings[]=$casting;
         }
         
+    }
+
+    public function printFilm():string{
+        $retour = "<h2>$this</h2>";
+        $retour .= "<p>Date de sortie (en France) : ". $this->dateSortie->format("d-m-Y")."<br>";
+        $retour .= "Le réalisateur est $this->realisateur <br>";
+        $retour .= "le genre du film est : $this->genre <br>";
+        $retour .= "la durée : $this->duree</p>";
+        if ($this->synopsis!="") {
+            $retour.= "<h3>Synopsis</h3>";
+            $retour.= "<p>$this->synopsis</p>";
+        }
+        if ($this->castings != []) {
+            $retour .= "<h3>Personnages</h3><p>";
+            foreach ($this->castings as $casting) {
+                $retour .= "".$casting->getRole()." est incarné par " . $casting->getActeur() .".<br>";
+            }
+            $retour.="</p>";
+        }
+        return $retour;
     }
 
     public function __toString()
