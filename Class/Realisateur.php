@@ -33,6 +33,25 @@ class Realisateur extends Personne{
             $this->filmographie[]=$film;
         }
     }
+
+    public function printRealisateur():string{
+        $retour = "<h2>$this</h2>";
+        $retour .= "<h3>Informations</h3>";
+        $retour .= "<strong>Naissance : </strong>". $this->naissance->format("d-m-Y")."<br>";
+        $retour .= "<strong>Sexe :</strong> $this->sexe"."<br>";
+
+        if ($this->filmographie!=[]) {
+            $retour .= "<p>";
+            $retour.="<h3>Filmographie</h3>";
+            foreach ($this->filmographie as $film) {
+                $retour.= "$film <br>";
+            }
+            $retour .= "</p>";
+        }
+
+        return $retour;
+    }
+    
     public function __toString()
     {
         return strtoupper($this->nom)." $this->prenom";

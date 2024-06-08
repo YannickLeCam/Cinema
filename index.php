@@ -58,6 +58,10 @@ require_once 'Class/Personne.php';
         $casting6 = new Casting($role6, $acteur6, $film2);
 
         echo $film1->printFilm();
+        echo $acteur1->printActeur();
+        echo $genreDrama->printListFilm();
+        echo $realisateur1->printRealisateur();
+        echo $role1->printRole();
 
     ?>
 </body>

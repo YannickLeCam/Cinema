@@ -31,6 +31,18 @@ class Acteur extends Personne{
         }
     }
 
+    public function printActeur():string{
+        $retour = "<h2>$this</h2>";
+        if ($this->castings!=[]) {
+            $retour .= "<p>";
+            foreach ($this->castings as $casting) {
+                $retour.= $casting->getRole() . " dans le film " . $casting->getFilm() ."<br>";
+            }
+            $retour .= "</p>";
+        }
+        return $retour;
+    }
+
     public function __toString()
     {
         return strtoupper($this->nom)." $this->prenom";

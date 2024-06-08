@@ -60,9 +60,25 @@ class Role {
      *
      * @return array[Casting]
      */
-    public function getListeActeur(): array
+    public function getListeCasting(): array
     {
         return $this->listeCasting;
+    }
+
+    public function printRole():string{
+        $retour = "<h2>$this</h2>";
+        if ($this->listeCasting!=[]) {
+            $retour.= "<h3>Acteur ayant incarné ce role</h3><p>";
+            foreach ($this->listeCasting as $casting) {
+                $retour .=  $casting->getActeur() ." dans le film ". $casting->getFilm() ." <br>";
+            }
+            $retour.="</p>";
+        }else {
+            $retour .= "<p>Nous avons pas d'acteur ou de film pour ce role</p> <br>";
+        }
+
+
+        return $retour;
     }
 
     public function __toString()

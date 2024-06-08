@@ -56,8 +56,8 @@ class Genre {
         return $this->films;
     }
 
-    public function htmlListFilm():string{
-        $retour = "<p> La liste de $this->nom : </p> <ul>";
+    public function printListFilm():string{
+        $retour = "<h2> La liste de $this->nom : </h2> <ul>";
         foreach ($this->films as $film) {
             $retour.="<li>$film</li>";
         }
